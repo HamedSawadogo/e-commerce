@@ -1,0 +1,72 @@
+.card-detail-container {
+   height: 500px;
+   width: 600px;
+   display: block;
+   margin: 20px auto;
+
+   .set-cart {
+      margin: 5px 0;
+
+      small {
+         font-size: 1.1rem;
+         color: rgb(0, 0, 0);
+         font-weight: bold;
+         margin: 4px;
+      }
+
+      input {
+         cursor: pointer;
+         padding: 6px;
+         background: orange;
+         border-radius: 3px;
+         color: whitesmoke;
+         font-weight: bold;
+         font-size: 1rem;
+         border: 1px solid transparent;
+      }
+   }
+
+   h4 {
+      font-size: 1.2rem;
+   }
+
+   p {
+      font-size: .8rem;
+   }
+
+   img {
+      cursor: pointer;
+      width: 300px;
+      height: 200px;
+      margin: 0 auto;
+      display: flex;
+   }
+
+   .add-cart {
+      font-size: 2rem;
+   }
+
+   strong {
+      color: rgb(237, 91, 91);
+   }
+
+   button {
+      display: flex;
+      padding: 8px;
+      color: whitesmoke;
+      background: orange;
+      border: 1px solid whitesmoke;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      align-items: center;
+      margin: 5px 0;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+         opacity: 0.8;
+      }
+
+
+   }
+}

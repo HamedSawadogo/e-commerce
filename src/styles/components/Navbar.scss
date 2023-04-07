@@ -1,0 +1,40 @@
+.search-btn {
+   transition: 0.3s ease;
+   padding: 12px;
+   background: orangered;
+   color: whitesmoke;
+   font-size: 1rem;
+   border-radius: 5px;
+   border: 1px solid whitesmoke;
+   font-family: $font3;
+   margin: 0 3px;
+   cursor: pointer;
+}
+
+.navigation {
+
+   .items {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      justify-content: center;
+      list-style-type: none;
+      text-decoration: none;
+      background: $nav-color;
+   }
+
+   a {
+      color: whitesmoke;
+      text-decoration: none;
+      margin: 0 50px;
+      transition: .3s ease;
+      padding: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.9rem;
+
+      &:hover {
+         color: rgb(36, 35, 35);
+      }
+   }
+}

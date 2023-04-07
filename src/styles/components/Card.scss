@@ -1,0 +1,24 @@
+.card {
+   height: 330px;
+   border: 1px solid rgba(240, 236, 236, 0.868);
+   transition: 0.3s ease;
+   position: relative;
+   padding: 10px;
+   overflow: hidden;
+
+   &:hover {
+      cursor: pointer;
+   }
+
+   img {
+      width: 80%;
+      height: 50%;
+      background: transparent;
+      object-fit: center;
+
+      &:hover {
+         transform: scale(1.05);
+         transition: 0.3s ease;
+      }
+   }
+}
