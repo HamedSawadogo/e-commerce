@@ -1,0 +1,32 @@
+h4 {
+   text-align: center;
+}
+
+h5 {
+   text-align: center;
+}
+
+.cart-content-container {
+   display: flex;
+   height: 40px;
+   justify-content: center;
+   align-items: center;
+   background: whitesmoke;
+
+   input[type=button] {
+      border: 1px solid whitesmoke;
+      border-radius: 15px;
+      padding: 5px;
+      color: whitesmoke;
+      background: orange;
+      font-size: .9rem;
+      font-family: $font3;
+      transition: .3s ease;
+      width: 150px;
+
+      &:hover {
+         opacity: 0.9;
+
+      }
+   }
+}

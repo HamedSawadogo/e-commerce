@@ -1,11 +1,5 @@
 .header-container {
    display: grid;
    grid-template-columns: 25% 50% 25%;
-   margin: 6px auto;
-
-   img {
-      width: 60%;
-      height: 70vh;
-   }
-
+   padding: 10px;
 }

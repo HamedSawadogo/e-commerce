@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const HeaderCart = () => {
+const HeaderCart = ({ setSearchValue }) => {
   const cart = useSelector((state) => state.cart);
   const cartLength = cart.length > 0 ? cart.length : 0;
   const navigate = useNavigate();
@@ -13,14 +13,17 @@ const HeaderCart = () => {
       <ul className="bloc-items">
         <div className="search">
           <SearchIcon className="icon" />
-          <input type="search" placeholder=" rechercher un article" />
+          <input
+            type="search"
+            onChange={(e) => setSearchValue(e.target.value)}
+            placeholder=" rechercher un article"
+          />
           <button className="search-btn">Rechercher</button>
         </div>
         <div className="cart" onClick={() => navigate("/cart")}>
           <span>{cartLength}</span>
           <ShoppingCartIcon className="cart-icon" />
         </div>
-        {/* <div className="cart-details-container"></div> */}
       </ul>
     </div>
   );

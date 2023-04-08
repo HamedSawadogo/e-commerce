@@ -1,46 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import HeaderCart from "../components/HeaderCart";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import CartItem from "../components/cart-element/CartItem";
+import { emptyCart } from "../features/cart.slice";
 
 const Cart = () => {
-  const selector = useSelector((state) => state.cart);
-  const [quantity, setQuantity] = useState(1);
-  console.error(selector);
+  const articles = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const total = articles.reduce(
+    (acc, red) => acc + red.price * red.quantity,
+    0
+  );
+  const handleCart = () => {
+    dispatch(emptyCart());
+  };
   return (
     <div>
       <Navbar />
       <HeaderCart />
-      {selector.length > 0 ? (
-        selector?.map((product) => (
-          <div className="cart-item" key={product.id}>
-            <img src={product.img} style={{ width: 100, height: 100 }} alt="" />
-            <h4>{product.name}</h4>
-            <strong>prix {product.price} €</strong>
-            <div className="set-cart">
-              <input
-                onClick={() => setQuantity(quantity + 1)}
-                type="button"
-                value={"+"}
-              />
-              <small>{quantity}</small>
-              <input
-                onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
-                type="button"
-                value={"-"}
-              />
-            </div>
-          </div>
+      <div className="cart-content-container">
+        <h4>Total: {total && parseFloat(total).toFixed(2)} €</h4>
+        {articles.length > 0 && (
+          <input
+            type="button"
+            onClick={() => handleCart()}
+            value="vider le pannier"
+          />
+        )}
+      </div>
+      {articles.length > 0 ? (
+        articles?.map((product) => (
+          <CartItem article={product} key={product.id} />
         ))
       ) : (
-        <h4
-          style={{
-            textAlign: "center",
-          }}
-        >
-          Votre pannier est vide
-        </h4>
+        <h5>Votre pannier est vide</h5>
       )}
     </div>
   );

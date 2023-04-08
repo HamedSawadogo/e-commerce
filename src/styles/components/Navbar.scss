@@ -1,14 +1,20 @@
 .search-btn {
    transition: 0.3s ease;
-   padding: 12px;
+   padding: 9px;
    background: orangered;
    color: whitesmoke;
    font-size: 1rem;
    border-radius: 5px;
-   border: 1px solid whitesmoke;
    font-family: $font3;
    margin: 0 3px;
    cursor: pointer;
+   outline: none;
+   border: 1px solid whitesmoke;
+
+   &:active {
+      border: transparent;
+      outline: none;
+   }
 }
 
 .navigation {
@@ -21,6 +27,7 @@
       list-style-type: none;
       text-decoration: none;
       background: $nav-color;
+      margin: 0;
    }
 
    a {

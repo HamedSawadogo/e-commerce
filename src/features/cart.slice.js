@@ -3,9 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 export const CardSlice = createSlice({
   name: "cart",
   initialState: {
-    cart: [],
+    cart: window.localStorage.getItem("cart")
+      ? JSON.parse(window.localStorage.cart)
+      : [],
   },
   reducers: {
+    deleteCart: (state, { payload }) => {
+      const newCart = state.cart.filter((cart) => cart.id != payload);
+      state.cart = newCart;
+      window.localStorage.cart = JSON.stringify(newCart);
+    },
+    emptyCart: (state) => {
+      state.cart = [];
+      window.localStorage.cart = JSON.stringify(state.cart);
+    },
     addCart: (state, { payload }) => {
       let article = state.cart.filter((article) => article.id == payload.id);
       if (article.length > 0) {
@@ -22,9 +33,10 @@ export const CardSlice = createSlice({
       } else {
         state.cart.push(payload);
       }
+      window.localStorage.cart = JSON.stringify(state.cart);
     },
   },
 });
 
 export default CardSlice.reducer;
-export const { addCart } = CardSlice.actions;
+export const { addCart, deleteCart, emptyCart } = CardSlice.actions;
