@@ -6,8 +6,8 @@
 
 ### article
 
-![article](img/items.png)
+![article](card.png)
 
 ### pannier
 
-![article](../e-commerce/p-img/cart.png)
+![article](cart.png)
