@@ -4,7 +4,7 @@
 
 ### article
 
-![article](../e-commerce/p-img/card.png)
+![article](img/items.png)
 
 ### pannier
 
