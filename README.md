@@ -1,6 +1,8 @@
+## rect e-commerce 📱
+
 ### articles
 
-![articles](../e-commerce/p-img/items.png)
+![articles](items.png)
 
 ### article
 
