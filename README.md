@@ -1,11 +1,11 @@
 ### articles
 
-![articles](./p-img/items.png)
+![articles](../e-commerce/p-img/items.png)
 
 ### article
 
-![article](./p-img/card.png)
+![article](../e-commerce/p-img/card.png)
 
 ### pannier
 
-![article](./p-img/cart.png)
+![article](../e-commerce/p-img/cart.png)
